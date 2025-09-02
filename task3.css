@@ -11,7 +11,7 @@
 .height{
     height: 1000px;
     width: 100%;
-    background-image: url(../html/6e994d0b-3c09-4e01-916d-0a0bdfd78884.jpeg);
+    background-image: url(../images/6e994d0b-3c09-4e01-916d-0a0bdfd78884.jpeg);
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -52,7 +52,7 @@ li:hover{
     background-color: aliceblue;
     margin-top: 150px;
     margin-right: 30px;
-    background-image: url(../img1.jpg);
+    background-image: url(../images/img1.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -66,7 +66,7 @@ li:hover{
     background-color: aliceblue;
     margin-top: 150px;
     margin-right: 36px;
-    background-image: url(../html/pexels-hsapir-1054655.jpg);
+    background-image: url(../images/pexels-hsapir-1054655.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -78,7 +78,7 @@ li:hover{
     background-color: aliceblue;
     margin-top: 150px;
     margin-left: 30px;
-    background-image: url(../html/istockphoto-1322277517-612x612.jpg);
+    background-image: url(../images/istockphoto-1322277517-612x612.jpg);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
