@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Generate Random 4 digit number :</h3>
+    <button onclick="random()">generate</button>
+    <p id="result"></p>
+    <script>
+        function random(){
+            let min = 1000;
+            let max = 9999;
+            let generate = Math.floor(Math.random() * (max - min +1)) + min ;
+            document.getElementById('result').innerHTML = `random number is : ${generate}` ;
+        }
+    </script>
+</body>
+</html>

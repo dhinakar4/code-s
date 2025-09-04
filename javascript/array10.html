@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Check Number os float or integer :</h3>
+    <label for="num">Enter the number :</label>
+    <input type="number" id="num1">
+    <button onclick="check()">check</button>
+    <p id="result"></p>
+    <script>
+        function check(){
+            let num = document.getElementById('num1').value;
+            let result = document.getElementById('result');
+            let element = parseFloat(num);
+
+            if (Number.isInteger(element)){
+                result.innerHTML = "The number is integer :" + num;
+            } else {
+                result.innerHTML = "The number is float :" + num;
+            }
+        }
+    </script>
+</body>
+</html>

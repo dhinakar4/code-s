@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    let cars = document.createElement('div');      
+    let bmw = document.createElement('p');
+    bmw.textContent = 'BMW';
+    let shift = document.createElement('p');
+    shift.textContent = 'SHIFT';
+    let honda = document.createElement('p');
+    honda.textContent = 'HONDA CITY';
+    
+    cars.append(bmw);
+    cars.append(shift);
+    cars.append(honda);
+
+    console.log(cars);
+    console.log(cars.firstChild);
+    console.log(cars.lastChild);
+    console.log(cars.children[1].textContent);
+    
+    </script>
+</body>
+</html>

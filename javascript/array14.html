@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Image dimension :</h3>
+    <img id="img" src="../html/istockphoto-1322277517-612x612.jpg" alt="">
+    <p id="result"></p>
+     <script>
+        let img = document.getElementById('img');
+        img.onload = function(){
+            let width = img.naturalWidth;
+            let height = img.naturalHeight;
+            document.getElementById('result').innerHTML = "width = "+ width + "px <br>"  + "height = " +height + "px";
+        }
+     </script>
+</body>
+</html>

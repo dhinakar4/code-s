@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>Anagram Method :</h4>
+    <p id="result"></p>
+    <script>
+        function anagram(str1,str2){
+            const rev = str1.replace(/\s/g, '').toLowerCase();
+            const rever = str2.replace(/\s/g, '').toLowerCase();
+            if(rev.length !== rever.length){
+                return false;
+            }
+            const anagram = rev.split('').sort().join('');
+            const anagram1 = rever.split('').sort().join('');
+            return anagram === anagram1;
+        }
+        let text = "listen";
+        let text1 = "silent";
+        let text2 = "race";
+        let text3 = "area";
+        let result = anagram(text,text1);
+        let result1 = anagram(text2,text3);
+        document.getElementById('result').innerHTML = `${text} ${text1} "${result}" <br>` +
+                                                      `${text2} ${text3} "${result1}"`;
+    </script>
+</body>
+</html>

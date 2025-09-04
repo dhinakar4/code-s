@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>Add Ellipsis :</h4>
+    <p id="result"></p>
+    <script>
+        function ellipsis(str1,str2){
+            if(str1 <= str2){
+                return str1;
+            }
+             return str1.substring(0,str2) + '...';
+        }
+        let text = "The original text is welcome!";
+        let text1 = ellipsis(text,20);
+        let text2 = "We are playing cricket!";
+        let text3 = ellipsis(text2,6);
+        document.getElementById('result').innerHTML = `${text} <br> ${text1} <br><br>` + `${text2} <br> ${text3}`;
+
+    </script>
+</body>
+</html>

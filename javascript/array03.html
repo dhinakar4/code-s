@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Remove Spaces :</h3>
+    <label for="text">Enter the string :</label>
+    <input type="text" id="string">
+    <button onclick="removespace()">Trim</button>
+    <p id="result"></p>
+    <script>
+        function removespace(){
+        let text = document.getElementById('string').value;
+        let trim = text.trim();
+        document.getElementById('string').value = trim;
+        document.getElementById('result').textContent = "Trim the String is:"+ trim;
+        }
+    </script>
+</body>
+</html>

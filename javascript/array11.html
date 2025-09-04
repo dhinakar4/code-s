@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>DOB Validation :</h3>
+    <label for="dob">Date of birth :</label>
+    <input type="date" id="dob">
+    <button onclick="dateofbirth()">validate</button>
+    <p id="result"></p>
+    <script>
+        function dateofbirth(){
+            let dob = document.getElementById('dob').value;
+            let result = document.getElementById('result');
+            
+            let originaldob = new Date(dob);
+            let day = new Date();
+            let age = day.getFullYear() - originaldob.getFullYear();
+            let month = day.getMonth() - originaldob.getMonth();
+            let date = day.getDate() - originaldob.getDate();
+
+            if(age < 18 ) {
+                result.innerHTML = "Your age is under 18!";
+                result.style.color = 'red';
+            } 
+            else if(age >= 18 && age <= 30){
+                result.innerHTML = "Your age is valid";
+                result.style.color = "blue";
+            } 
+            else {
+                result.innerHTML = "Your age is over 30! ";
+                result.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>

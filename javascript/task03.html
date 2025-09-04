@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Multiples of 3 and 5 under 100: </h2>
+    <button onclick="calsum()">Calculate</button>
+    <p id="result"></p>
+    <script>
+        function calsum(){
+            let sum = 0;
+            for (let i= 1;i<100;i++){
+                if (i % 3 ===  0 && i % 5 === 0){
+                    sum += i;
+                }
+            }
+            document.getElementById('result').innerText = "the answer is " + sum;
+        }
+    </script>
+</body>
+</html>

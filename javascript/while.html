@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="num"></p>
+    <p id="num1"></p>
+    <script>
+     let text1 ="";
+     let j=0;
+     while(j<5){
+        text1 += "the number is "+ j + "<br>";
+        j++;
+     }
+     document.getElementById('num').innerHTML = text1;
+
+
+     let text ="";
+     let i=5;
+     do{
+        text += 'the number is '+ i + "<br>";
+        i++;
+     }
+     while(i<10);
+     document.getElementById('num1').innerHTML = text;
+    </script>
+</body>
+</html>

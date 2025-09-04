@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>Check the Strings :</h4>
+    <input type="text" id="result1">
+    <button onclick="check()">enter</button>
+    <p id="result"></p>
+    <script>
+        function check(){
+            let text = document.getElementById('result1').value;
+            let string = /^[a-zA-Z]+$/.test(text);
+            if(!string){
+                document.getElementById('result').innerHTML = "The string is " + string
+            } else {
+                document.getElementById ('result').innerHTML = "The string is " + string
+            }
+        }
+    </script>
+</body>
+</html> 

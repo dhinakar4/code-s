@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>The Reversed String!</h4>
+    <p id="demo"></p>
+    <script>
+        function reverse(str){
+            return str.split(' ').reverse().join(' ');
+        }
+        let text = "good afternoon all!";
+        let text1 = reverse(text);
+        document.getElementById('demo').innerHTML = text1;
+    </script>
+</body>
+</html>

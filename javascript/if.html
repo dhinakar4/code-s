@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="hour"></p>
+    
+    <script>
+        const hour = new Date().getHours();
+        let day;
+
+        if (hour>20) {
+            day = "Good Night!";
+        }
+        else (hour<18)
+        day = "Good Afternoon";
+        document.getElementById("hour").innerHTML = day;
+
+
+    </script>
+</body>
+</html>

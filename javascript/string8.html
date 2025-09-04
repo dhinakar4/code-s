@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>Count Alphabets and Digit :</h4>
+    <input type="text" id="input">
+    <button onclick="count()">enter</button>
+    <p id="result"></p>
+    <script>
+        function count(){
+            let text = document.getElementById('input').value;
+            let alphabet = 0;
+            let digit = 0;
+             for(let char of text){
+                if (/[a-zA-Z]/g.test(char)){
+                    alphabet++;
+                } else if (/\d/.test(char)){
+                    digit++;
+                }
+             }  
+        
+        document.getElementById('result').innerHTML = "alphabets : " + alphabet + "<br>digits : " + digit;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Swap Numbers :</h3>
+    <label for="text">Enter the number :</label>
+    <input type="number" id="input" value=""><br><br>
+    <label for="text">Enter the Number :</label>
+    <input type="number" id="input1" value=""><br><br>
+    <button onclick="swap()">Swap</button>
+    <p id="result1"></p>
+    <p id="result2"></p>
+    <script>
+        function swap(){
+            let firstnum = parseInt(document.getElementById('input').value);
+            let secondnum = parseInt(document.getElementById('input1').value);
+            [firstnum,secondnum] = [secondnum,firstnum]
+            document.getElementById('input').value = firstnum;
+            document.getElementById('input1').value = secondnum;
+            document.getElementById('result1').innerHTML = 'after swap :'+ firstnum;
+            document.getElementById('result2').innerHTML = 'after swap :'+ secondnum; 
+        }
+    </script>
+</body>
+</html>

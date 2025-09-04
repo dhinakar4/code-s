@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Coundown Timer :</h3>
+    <p id="result" style="color: red;"></p>
+    <script>
+        let target = new Date("2026-03-02T23:59:59").getTime();
+        let countdown = setInterval(function(){
+            let today = new Date().getTime();
+            let distance = target - today ;
+
+            let days = Math.floor(distance /(1000 *60 *60 *24));
+            let hour = Math.floor((distance %(1000 *60 *60 *24)) / (1000 *60 *60));
+            let minute = Math.floor((distance %(1000 *60 *60)) /(1000 *60));
+            let second = Math.floor((distance %(1000 *60)) / 1000);
+
+            document.getElementById('result').innerHTML = days + "d " + hour + "h " + minute + "m " + second + "s" ;
+
+            if (distance <= 0){
+                clearInterval(countdown);
+                document.getElementById('result').innerHTML = "times over!";
+            }
+        },1000)
+    </script>
+</body>
+</html>

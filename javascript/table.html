@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../javascript/table.css">
+</head>
+<body>
+    <h2>Smart Phones Lists</h2>
+    <pre id="result"></pre>
+
+    <label for="search">Search</label>
+    <input type="search" id="find" onkeyup="searchitem()">
+
+    <label for="price">Price</label>
+    <select id="price" onchange="sortprice()">
+        <option value="">select</option>
+        <option value="low">Low to High</option>
+        <option value="high">High to Low</option>
+    </select>
+
+    <label for="rating">Ratings</label>
+    <select id="rate" onchange="sortrate()">
+        <option value="">select</option>
+        <option value="low">Low to High</option>
+        <option value="high">High to Low</option>
+    </select>
+
+    <label for="category">Categorys</label>
+    <select id="category" onchange="sortcategory()">
+        <option value="">select</option>
+        <option value="Budget">Budget Mobiles</option>
+        <option value="Mid-range">Mid-Range Mobiles</option>
+        <option value="Flagship">Flagship Mobiles</option>
+    </select>
+
+    <button onclick="insert()">Insert</button>
+
+    <script>
+    let products = [
+   { id : 1,name : 'Samsung',price : 42999,rating : 4.9,location : 'Coimbatore',category : 'Flagship'},
+   { id : 2,name : 'One-plus',price : 27999,rating : 4.5,location : 'Erode',category : 'Mid-range'},
+   { id : 3,name : 'Apple',price : 44999,rating : 4.7,location : 'Delhi',category : 'Flagship'},
+   { id : 4,name : 'Nothing',price : 29999,rating : 4.0,location : 'Chennai',category : 'Mid-range'},
+   { id : 5,name : 'Poco',price : 19999,rating : 4.3,location : 'Coimbatore',category : 'Budget'},
+   { id : 6,name : 'Pixel',price : 37999,rating : 4.4,location : 'Chennai',category : 'Flagship'},
+   { id : 7,name : 'Vivo',price : 24999,rating : 4.6,location : 'Madurai',category : 'Budget'},
+];
+function product(data = products){
+    let table = `<table border = '1' cellpadding = '6'>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Rating</th>
+        <th>Location</th>
+        <th>Category</th>
+        <th>Action</th>
+    </tr>`;
+    data.forEach (p => {
+        table += `<tr>
+        <td>${p.id}</td>
+        <td>${p.name}</td>
+        <td>${p.price}</td>
+        <td>${p.rating}</td>
+        <td>${p.location}</td>
+        <td>${p.category}</td>
+        <td><button onclick = "deleteproduct(${p.id})">Delete</button></td>
+        </tr>`;
+    });
+    table += "</table>";
+    document.getElementById('result').innerHTML = table;
+}
+
+function searchitem(){
+    let key = document.getElementById('find').value.toLowerCase();
+    let search = products.filter(p => p.name.toLowerCase().includes(key) ||
+    p.price.toString().includes(key)|| p.location.toLowerCase().includes(key) ||
+    p.category.toLowerCase().includes(key) || p.id.toString().includes(key));
+    product(search);
+}
+
+function sortprice(){
+    let value =document.getElementById('price').value;
+    let price = [...products]
+    if (value === 'low'){
+    price.sort((a,b) => a.price - b.price);
+} else if (value === 'high'){
+    price.sort((a,b) => b.price - a.price);
+}
+    product(price)
+}
+
+function sortrate(){
+    let value = document.getElementById('rate').value;
+    let rate = [...products]
+    if (value === 'low'){
+    rate.sort((a,b) => a.rating - b.rating)
+}   else if (value === 'high'){
+    rate.sort((a,b) => b.rating - a.rating)
+}
+    product(rate)
+}
+
+function sortcategory(){
+    let value = document.getElementById('category').value;
+    let category = [...products]
+    if (value === 'Budget') {
+       category = category.filter(p => p.category === 'Budget')
+    } else if (value === 'Mid-range') {
+       category = category.filter(p => p.category === 'Mid-range') 
+    } else if (value === 'Flagship'){
+       category = category.filter(p => p.category === 'Flagship')
+    }
+    product(category)
+}
+
+function insert(){
+    let newid = Math.max(...products.map(p => p.id)) +1;
+    products.push({id : newid,name : 'Oppo',price : '17999',rating : '3.9',location : 'Bangalore',category : 'Budget'});
+    product();
+}
+
+function deleteproduct(id){
+    let index = products.findIndex(p => p.id === p.id);
+    if(index !== -1){
+        products.splice(index,1);
+    }
+    product();
+}
+ product();
+    </script>
+</body>
+</html>

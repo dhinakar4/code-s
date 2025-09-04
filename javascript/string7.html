@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>Alaphabetical Order :</h4>
+    <p id="result"></p>
+    <script>
+        const text = ["aegon","Aemond","Dany","jhon","daemon"];
+        text.sort((a,b)=>{
+            const lower = a.toLowerCase();
+            const lower1 = b.toLowerCase();
+            return lower.localeCompare(lower1);
+        });
+
+        document.getElementById('result').innerHTML = text;
+    </script>
+</body>
+</html>

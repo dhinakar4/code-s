@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Date picker :</h3>
+    <label for="dob">Enter the Date :</label>
+    <input type="date" id="dob">
+    <script>
+        function datepicker(date){
+            let year = date.getFullYear();
+            let month = String(date.getMonth() + 1).padStart(2,'0');
+            let day = String(date.getDate()).padStart(2,'0');
+            return `${year}-${month}-${day}`;
+        }
+
+            let today = new Date();
+            let later = new Date();
+            later.setDate(today.getDate() + 10);
+             
+            let min = datepicker(today);
+            let max = datepicker(later);
+
+            let input = document.getElementById('dob');
+            input.min = min;
+            input.max = max;
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Armstrong Number Or Not</h1>
+    <label for="number">enter the number</label>
+    <input type="number" id="number">
+    <button onclick="checkArmstrong()">submit</button>
+    <p id="result"></p>
+    <script>
+        function checkArmstrong() {
+           const input = document.getElementById('number').value;
+            const num = parseInt(input);
+
+            if(isNaN(num)){
+                document.getElementById("result").innerText = "false";
+                return;
+            }
+              
+            const str = num.toString();
+            const digits = str.length;
+
+            let sum = 0;
+            for (let i=0;i<digits;i++){
+                const numdigit = parseInt(str[i]);
+                sum += Math.pow(numdigit,digits);
+            }
+            if(sum === num){
+                    document.getElementById("result").innerText = num + ' is a armstrong number';
+                } else {
+                    document.getElementById("result").innerText = num + ' not a armstrong number';
+                }
+        }
+    </script>   
+</body>
+</html>

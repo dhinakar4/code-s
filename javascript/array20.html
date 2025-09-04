@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>File extension</h3>
+    <input type="file" id="myfile">
+    <p id="result" style="color: red;"></p>
+    <script>
+        document.getElementById('myfile').addEventListener('change',function(){
+            let file = this.files[0];
+            if (file){
+                let exit = file.name.split('.').pop();
+                let result = document.getElementById('result').innerHTML = exit
+            }
+        })
+    </script>
+</body>
+</html>

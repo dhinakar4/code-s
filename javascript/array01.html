@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Increase Or Decrease the value :</h3>
+    <input type="number" id="getvalue" value="0">
+    <button onclick="increase()">+</button>
+    <button onclick="decrease()">-</button>
+    <p id="result"></p>
+    <script>
+
+        let input = document.getElementById('getvalue');
+
+        function increase(){
+         let currentvalue = parseInt(input.value);
+         input.value = currentvalue + 1 ;
+        }
+
+        function decrease(){
+         let currentvalue = parseInt(input.value);
+         input.value = currentvalue - 1 ;
+        }
+    </script>
+</body>
+</html>

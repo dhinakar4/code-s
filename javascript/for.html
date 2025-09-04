@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="cars"></p>
+    <p id="num"></p>
+    <p id="txt"></p>
+    <p id="txt1"></p>
+    <script>
+    const car = ['shift','audi','honda','volvo'];
+        let text="";
+        for (let i=0;i<car.length;i++) {
+            text += car[i] + '<br>';
+        }
+     document.getElementById('cars').innerHTML=text;
+
+
+
+     let number = "";
+     for (let i=0;i<10;i++) {
+        number += 'the value is' + i + "<br>";
+     }
+     document.getElementById('num').innerHTML = number;
+
+
+
+     const img = ['img1','img2','img3','img4'];
+     let i=0;
+     let len=img.length;
+     let txt="";
+     for(; i<len;i++){
+        txt += img[i] + "<br>";
+     }
+     document.getElementById('txt').innerHTML = txt;
+
+
+     for (let i =55 ;i >= 10;i--){
+        console.log(i)
+     }
+     
+
+
+
+    </script>
+</body>
+</html>

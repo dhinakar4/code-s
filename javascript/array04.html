@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Undefined and Not defined variable :</h3>
+    <p id="result"></p>
+    <p id="result1"></p>
+    <script>
+        let a ;
+        document.getElementById('result').innerHTML = a; 
+        try {
+            document.getElementById('result1').innerHTML = b;
+        } catch(error) {
+            document.getElementById('result1').innerHTML = error.message;
+        }
+    </script>
+</body>
+</html>

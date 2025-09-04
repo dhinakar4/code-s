@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Calculate the two days between :</h3>
+    <label for="date1">Enter the first date :</label>
+    <input type="date" id="date1"><br><br>
+    <label for="date2">Enter the second date :</label>
+    <input type="date" id="date2"><br><br>
+    <button onclick="comparedate()">find</button>
+    <p id="reslt"></p>
+    <script>
+        function comparedate(){
+        let date1 = document.getElementById('date1').value;
+        let date2 = document.getElementById('date2').value;
+        let d1 = new Date(date1);
+        let d2 = new Date(date2);
+        let difference = Math.abs(d1 - d2);
+        let convert = Math.floor(difference / (1000 *60 *60 *24));
+        let message = "";
+        if (d1.getTime() === d2.getTime()){
+            message = "two date are same!"
+        } else if (d1 < d2){
+            message = `date is earlier ${convert}  days`;
+        } else {
+            message = `${convert} days later than second date`;
+        }
+        document.getElementById('reslt').innerHTML = message ;
+        }
+    </script>
+</body>
+</html>
